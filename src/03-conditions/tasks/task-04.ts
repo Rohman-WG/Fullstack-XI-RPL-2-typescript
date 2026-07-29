@@ -27,6 +27,11 @@ const customerName = "Nadia Putri";
 const isPremium = true;
 const isAvailable = false;
 
+console.log("=== Hotel Reservation System ===");
+console.log("Customer Name = ", customerName);
+console.log("Premium Member = ", isPremium);
+console.log("Room Available = ", isAvailable);
+
 let reservationResult;
 
 if (isAvailable) {

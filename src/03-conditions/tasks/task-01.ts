@@ -26,6 +26,11 @@ const finalScore = 82;
 const attendance = 94;
 const tuitionPaid = true;
 
+console.log("Student name = ",studentName);
+console.log("Final Score = ",finalScore);
+console.log("Attendace = ",attendance);
+console.log("Tuition Paid = ",tuitionPaid);
+
 if (finalScore >= 75 && attendance >= 90 && tuitionPaid === true) {
   console.log("Congratulations! You are eligible to graduate.");
 } else {

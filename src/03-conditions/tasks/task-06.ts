@@ -24,3 +24,35 @@
  * 3. Display the patient's destination.
  */
 
+
+
+const patientName = "Siti Rahma";
+const isCriticalCondition = false;
+const isHasAppointment = true;
+const age = 67;
+const isHasInsurance = true;
+
+let destination;
+
+if (isCriticalCondition) {
+    destination = "Emergency Room";
+} else if (isHasAppointment) {
+   if (age > 60) {destination = "Priority Queue";
+ } else {
+    destination = "Regular Queue";
+ }
+} else {
+    if (isHasInsurance) {
+        destination = "Insurance Registration Counter."
+    } else {
+        destination = "General Registration Counter."
+    }
+}
+
+console.log("Patient Name = ",patientName);
+console.log("Critical Condition =",isCriticalCondition);
+console.log("Has Appointment =",isHasAppointment);
+console.log("Age =" ,age);
+console.log("Has Insurance = ",isHasInsurance);
+console.log("-------------------------------------");
+console.log("Patient Destination = ",destination);

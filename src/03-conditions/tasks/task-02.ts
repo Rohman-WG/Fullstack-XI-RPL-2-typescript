@@ -19,6 +19,9 @@ const employeeName = "Dimas Pratama";
 const performanceScore = 78;
 const hasBonus = true;
 
+console.log("Employee Name =",employeeName);
+console.log("Bonus = ",hasBonus);
+
 if (performanceScore <= 80) {
     console.log("Bonus Approved");
 } else {
