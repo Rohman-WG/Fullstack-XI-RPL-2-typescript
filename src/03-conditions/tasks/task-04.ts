@@ -22,3 +22,23 @@
  * 2. Implement the logic using nested if statements.
  * 3. Display the reservation result.
  */
+
+const customerName = "Nadia Putri";
+const isPremium = true;
+const isAvailable = false;
+
+let reservationResult;
+
+if (isAvailable) {
+    if (isPremium) {
+        reservationResult = "Free room upgrade.";
+    } else {
+        reservationResult  = "Reservation confirmed.";
+    }
+} else {
+    if (isPremium) {
+        reservationResult = "You are placed in priority waiting list.";
+    } else {
+        reservationResult = "No rooms are available";
+    }
+}

@@ -32,3 +32,33 @@
  *  - Implement the second screening only if the first screening is passed.
  *  - Display the correct result.
  */
+
+const studentName = "Fajar Hidayat";
+const GPA = 3.86;
+const familyIncome = 4200000;
+const competitions = 4;
+const isHasDisRecord = false;
+const documentsComplete = true;
+
+const passedFirstScreening = 
+    GPA >= 3.75 && familyIncome < 5000000;
+
+let result;
+
+if (passedFirstScreening) {
+    const passedSecondScreening = 
+    competitions >= 4 &&
+    isHasDisRecord === false &&
+    documentsComplete === true;
+
+    if (passedSecondScreening) {
+        result = "Scholarship Approved";
+    } else {
+        result = "Passed first screening but failed in seconf screening";
+    }
+} else {
+    result = "Failed first screening";
+}
+
+console.log("Student name = "+studentName);
+console.log(result);

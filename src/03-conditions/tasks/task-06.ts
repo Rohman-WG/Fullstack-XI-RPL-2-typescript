@@ -23,3 +23,4 @@
  * 2. Implement the hospital workflow using conditional statements.
  * 3. Display the patient's destination.
  */
+

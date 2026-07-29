@@ -10,3 +10,43 @@
  * 
  * display the book data using console.log.
  */
+
+type Library = {
+    ISBN: number;
+    Title: string;
+    Author: string;
+    numberPage: number;
+    category: string;
+    available: boolean;
+};
+
+const librarys: Library[] = [
+    {
+        ISBN: 98321,
+        Title: "3726 mdpl",
+        Author: "Nurwina Sari",
+        numberPage: 372,
+        category: "Romance",
+        available: true,
+    },
+
+    {
+        ISBN: 37182,
+        Title: "0 mpdl",
+        Author: "Nurwina Sari",
+        numberPage: 105,
+        category: "Romance",
+        available: false,
+    },
+
+    {
+        ISBN: 31191,
+        Title: "The Forest",
+        Author: "Sir Mcloen",
+        numberPage: 343,
+        category: "Pscyhopath",
+        available: false,
+    },
+];
+
+console.log(librarys);

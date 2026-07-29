@@ -9,3 +9,45 @@
  * 
  * display the attendance data using console.log.
  */
+
+type Employee = {
+    ID: string;
+    employeeName: string;
+    date: Date;
+    inTime: Date;
+    outTime: Date;
+    totalWorkTime: number;
+    isPresent: boolean;
+};
+
+const employees: Employee[] = [
+    {
+        ID: "SK78623",
+        employeeName: "Rizki",
+        date: new Date ("2026-07-25"),
+        inTime: new Date ("2026-07-25T08:06:30"),
+        outTime: new Date ("2026-07-25T08:18:00"),
+        totalWorkTime: 690,
+        isPresent: true,
+    },
+    {
+        ID: "SK90122",
+        employeeName: "Yanto",
+        date: new Date ("2026-07-26"),
+        inTime: new Date ("2026-07-26T09:06:00"),
+        outTime: new Date ("2026-07-26T09:18:00"),
+        totalWorkTime: 720,
+        isPresent: true,
+    },
+    {
+        ID: "SK78327",
+        employeeName: "Sadra",
+        date: new Date ("2026-07-27"),
+        inTime: new Date ("2026-07-27T10:06:30"),
+        outTime: new Date ("2026-07-27T10:17:30"),
+        totalWorkTime: 660, 
+        isPresent: false,
+    },
+];
+
+console.log(employees);

@@ -13,3 +13,31 @@
  * - Discount amount
  * - Final payment
  */
+
+const pricePerHours = 8000;
+const hours = 7;
+const minutes = 35;
+
+const totalMinutes = (hours * 60) + minutes;
+const remainingMinutes = totalMinutes % 60;
+
+let billingHours = Math.floor(totalMinutes / 60);
+if (remainingMinutes > 0) {
+    billingHours++;
+}
+
+const totalPayment = billingHours * pricePerHours;
+
+let discount = 0;
+if(billingHours > 5) {
+    discount = totalPayment * 0.15;
+}
+
+const finalPayment = totalPayment - discount;
+
+console.log("Total Minutes:", totalMinutes);
+console.log("Remaining Minutes:", remainingMinutes);
+console.log("Billed Hours:", billingHours);
+console.log("Payment Before Discount:", totalPayment);
+console.log("Discount:", discount);
+console.log("Final Payment:", finalPayment);

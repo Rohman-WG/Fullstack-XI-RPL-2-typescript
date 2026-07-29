@@ -22,3 +22,45 @@
  *  - Calculate the final payment.
 
  */
+
+const keyboardPrice = 850000;
+const keyboardQuantity = 1;
+
+const mousePrice = 275000;
+const mouseQuantity = 2;
+
+const mousepadPrice = 120000;
+const mousepadQuantity = 1;
+
+const isPremium = true;
+
+const subtotal =
+(keyboardPrice * keyboardQuantity) +
+(mousePrice * mouseQuantity) +
+(mousepadPrice * mousepadQuantity);
+
+let totalItems= 0;
+
+for (let i = 0; i < keyboardQuantity; i++) totalItems++;
+for (let i = 0; i < mouseQuantity; i++) totalItems++;
+for (let i = 0; i < mousepadQuantity; i++) totalItems++;
+
+let discount = 0;
+
+
+if (subtotal > 1000000) {
+   discount = subtotal * 0.1;
+}
+
+if (isPremium) {
+    console.log("Free Shipping");
+} else {
+    console.log("Shipping Fee Applies");
+}
+
+const finalpayment = subtotal - discount;
+
+console.log("Subtotal:", subtotal);
+console.log("Total Items:", totalItems);
+console.log("Discount:", discount);
+console.log("Final Payment:", finalpayment);
