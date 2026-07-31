@@ -21,3 +21,28 @@ const orders = [
   { id: "ORD005", paid: false, stockAvailable: false },
   { id: "ORD006", paid: true, stockAvailable: true }
 ];
+
+let readyToship = 0;
+let unpaidOrders = 0;
+let waitingForStocks = 0;
+let OrderIDs = [];
+
+for (let i = 0; i < orders.length; i++) {
+  if (orders[i].paid === true && orders[i].stockAvailable === true) {
+  readyToship++;
+  OrderIDs.push(orders[i].id);
+  } else if (orders[i].paid === false) {
+    unpaidOrders++;
+  } else if (orders[i].stockAvailable === false) {
+    waitingForStocks++;
+  }
+}
+
+console.log(`Ready to ship: ${readyToship}`);
+console.log(`Unpaid orders: ${unpaidOrders}`);
+console.log(`Waiting for stocks: ${waitingForStocks}`);
+console.log("Order IDs ready to ship: ");
+
+for (let i = 0; i < OrderIDs.length; i++) {
+  console.log(orders[i].id);
+}
