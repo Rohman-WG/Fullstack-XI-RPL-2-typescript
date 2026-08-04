@@ -54,7 +54,7 @@ if (passedFirstScreening) {
     if (passedSecondScreening) {
         result = "Scholarship Approved";
     } else {
-        result = "Passed first screening but failed in seconf screening";
+        result = "Passed first screening but failed in second screening";
     }
 } else {
     result = "Failed first screening";
