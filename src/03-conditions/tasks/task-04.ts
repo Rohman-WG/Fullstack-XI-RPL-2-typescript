@@ -34,7 +34,7 @@ console.log("Room Available = ", isAvailable);
 
 let reservationResult;
 
-if (isAvailable) {
+if (!isAvailable) {
     if (isPremium) {
         reservationResult = "Free room upgrade.";
     } else {
