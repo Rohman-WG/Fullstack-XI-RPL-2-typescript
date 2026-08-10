@@ -27,7 +27,6 @@ const students = [
     { name: "Hana", score: 67 }
 ];
 
-let studentsName = [];
 let gradeA = 0;
 let gradeB = 0;
 let gradeC = 0;
