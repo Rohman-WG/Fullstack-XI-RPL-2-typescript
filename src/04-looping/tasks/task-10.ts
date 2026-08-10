@@ -65,7 +65,7 @@ console.log("\n Student not Submitted");
 for (const student of notSubmitted) {
     console.log("- " + student);
 }
-console.log("\n Student Passed");
+console.log("\n Student revise");
 for (const student of studentRevise) {
     console.log("- " + student);
 }
