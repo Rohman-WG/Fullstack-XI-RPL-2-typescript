@@ -61,15 +61,12 @@ console.log(`Student who submitted: ${submittedCount}`);
 console.log(`Student who not submitted: ${notSubmittedCount}`);
 console.log(`Student who must revise: ${reviseCount}`);
 console.log(`Student who passed: ${studentPassed}`);
-
 console.log("\n Student not Submitted");
 for (const student of notSubmitted) {
-    console.log("- "+student);
+    console.log("- " + student);
 }
-
 console.log("\n Student Passed");
 for (const student of studentRevise) {
-    console.log("- "+student);
+    console.log("- " + student);
 }
-
-console.log(`CLass Average Score: ${averagescores.toFixed(2)}`);
+console.log(`CLass Average Score: ${averagescores}`);
