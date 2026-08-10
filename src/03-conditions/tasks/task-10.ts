@@ -62,7 +62,7 @@ if (isActiveStudent && isTuitionPaid) {
     isPassedDatabaseSystems &&
     GPA >= 3.20
     ) {
-        if (isSeatAvailable) {
+        if (!isSeatAvailable) {
             regristationResult = "Regristation Successful";
         } else {
             regristationResult = "Added to waiting list";
