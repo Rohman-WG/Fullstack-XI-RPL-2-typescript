@@ -22,7 +22,7 @@
  * - 1 void function to display the report.
  * 
  */
-const submissions : data[] = [
+const submissions = [
     {
         student: "Alya",
         submitted: true,
@@ -54,12 +54,6 @@ const submissions : data[] = [
         score: 96
     }
 ];
-
-type data = {
-    student: string;
-    submitted: boolean;
-    score: number;
-}
 
 const passingScore:number = 75;
 
@@ -97,7 +91,7 @@ function getLowestCount (data: typeof submissions): number {
 }
 
 function displayReport(data: typeof submissions): void {
-    console.log("LMS Report:")
+    console.log("LMS Report:");
     console.log("Total student: ",getTotalStudent(data));
     console.log("Submitted Assignments: ",getSubmittedCount(data));
     console.log("Missing Assignments: ",getMissingCount(data));
@@ -106,7 +100,6 @@ function displayReport(data: typeof submissions): void {
     console.log("Average score: ",getAverageCount(data));
     console.log("Highest score: ",getHighestCount(data));
     console.log("Lowest score: ",getLowestCount(data));
-    
 }
 
 displayReport(submissions);
