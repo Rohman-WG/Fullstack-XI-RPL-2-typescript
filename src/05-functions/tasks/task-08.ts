@@ -22,7 +22,7 @@
  * - 1 void function to display the report.
  * 
  */
-const submissions = [
+const submissions : data[] = [
     {
         student: "Alya",
         submitted: true,
@@ -55,3 +55,58 @@ const submissions = [
     }
 ];
 
+type data = {
+    student: string;
+    submitted: boolean;
+    score: number;
+}
+
+const passingScore:number = 75;
+
+function getTotalStudent (data: typeof submissions): number {
+    return data.length;
+}
+
+function getSubmittedCount (data: typeof submissions): number {
+    return data.filter(item => item.submitted).length;
+}
+
+function getMissingCount (data: typeof submissions): number {
+    return data.filter(item => !item.submitted).length;
+}
+
+function getPassedCount (data: typeof submissions): number {
+    return data.filter(item => item.submitted && item.score >= passingScore).length;
+}
+
+function getRevisionCount (data: typeof submissions): number {
+    return data.filter(item => item.submitted && item.score < passingScore).length;
+}
+
+function getAverageCount (data: typeof submissions): number {
+    const totalScore = data.reduce((total, item) => total + item.score, 0);
+    return totalScore / data.length;
+}
+
+function getHighestCount (data: typeof submissions): number {
+    return Math.max (...data.map (item => item.score));
+}
+
+function getLowestCount (data: typeof submissions): number {
+    return Math.min (...data.map (item => item.score));
+}
+
+function displayReport(data: typeof submissions): void {
+    console.log("LMS Report:")
+    console.log("Total student: ",getTotalStudent(data));
+    console.log("Submitted Assignments: ",getSubmittedCount(data));
+    console.log("Missing Assignments: ",getMissingCount(data));
+    console.log("Passed Assignments: ",getPassedCount(data));
+    console.log("Revise Assignments: ",getRevisionCount(data));
+    console.log("Average score: ",getAverageCount(data));
+    console.log("Highest score: ",getHighestCount(data));
+    console.log("Lowest score: ",getLowestCount(data));
+    
+}
+
+displayReport(submissions);

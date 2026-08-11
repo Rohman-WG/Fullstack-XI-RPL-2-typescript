@@ -11,7 +11,7 @@
  * Complete following functions!
  */
 
-const students = [
+const students : Student[] = [
   {
     name: "Alya",
     major: "Software Engineering",
