@@ -10,7 +10,7 @@ function registerStudent(
     callback: (name: string) => void
 ): void {
     console.log(`Registering ${studentName}...`);
-
+    
     callback(studentName);
 }
 
@@ -27,3 +27,9 @@ registerStudent(`John Cena`, showRegistrationMessage)
  * create another function that display welcomming message for entire student!
  * Don't forget to implement callback function.
  * */
+
+function showWelcomeMessage(name: string): void {
+    console.log(`Welcome to our school, ${name}!`)
+}
+
+registerStudent(`John Cena`, showWelcomeMessage)

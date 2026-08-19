@@ -1,3 +1,5 @@
+import { compileFunction } from "node:vm";
+
 /**
  * Teacher has list of student score:
  */
@@ -29,15 +31,25 @@ function processScores(
     scores: number[],
     callback: (score: number) => void
 ): void {
-    // implementation
+    for (const score of scores) {
+        callback(score);
+    }
 }
 
 function printScore(score: number) {
-    // implementation
+    console.log(`Score: ${score}`)
 }
 
 function showGrade(score: number) {
-    // implementation
+    if (score >= 90) {
+        console.log(`Score: ${score} -> Grade A`);
+    } else if (score >= 80) {
+        console.log(`Score: ${score} -> Grade B`);
+    } else if (score >= 70) {
+        console.log(`Score: ${score} -> Grade C`);
+    } else {
+        console.log(`Score: ${score} -> Grade D`);
+    }
 }
 
 
