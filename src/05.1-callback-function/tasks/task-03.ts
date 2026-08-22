@@ -1,4 +1,4 @@
-/**
+/** 
  * An online store has the following products:
  */
 const products = [
