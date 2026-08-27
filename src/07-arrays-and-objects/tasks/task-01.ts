@@ -41,6 +41,5 @@ console.log(findStudent)
 const score = students.reduce((total, students) => 
   {return total + students.score},0)
 const averageScore = score / students.length
-
 console.log("AVERAGE SCORE")
 console.log(averageScore)

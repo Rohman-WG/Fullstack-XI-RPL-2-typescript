@@ -45,3 +45,33 @@ const products = [
         stock: 3,
     },
 ];
+
+const availableProducts = products.filter((products) =>
+    {return products.stock > 0})
+console.log("PRODUCTS ARE AVAILABLE")
+console.log(availableProducts)
+
+const unavailableProducts = products.filter((products) =>
+    {return products.stock === 0})
+console.log("PRODUCTS ARE UNAVAILABLE")
+console.log(unavailableProducts)
+
+const productsNames = products.map((products) => 
+    {return products.name})
+console.log("PRODUCTS NAMES")
+console.log(productsNames)
+
+const totalStock = products.reduce((total,products) => 
+    {return total + products.stock},0)
+console.log("TOTAL STOCKS")
+console.log(totalStock)
+
+const totalAvailableStock = products.filter(products => products.stock > 0).reduce(
+    (total,products) => {return total + (products.price * products.stock)},0)
+console.log("TOTAL AVAILABLE STOCK")
+console.log(totalAvailableStock)
+
+const sortedProducts = products.sort((a,b) =>
+    {return b.price - a.price})
+console.log("SORTED PRODUCTS")
+console.log(sortedProducts)
