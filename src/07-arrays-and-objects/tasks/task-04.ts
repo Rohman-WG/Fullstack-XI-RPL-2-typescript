@@ -11,9 +11,6 @@
  * 4. Find expensive product ( > 1.000.000)
  */
 
-import { setUncaughtExceptionCaptureCallback } from "node:process";
-import { compileFunction } from "node:vm";
-
 const cart = [
     {
         product: "Keyboard",
