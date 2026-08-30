@@ -29,7 +29,7 @@ const correctAnswers = ["A", "B", "C", "A", "B"];
 
 console.log("EXAM ANALYTICS")
 
-const studentScores = students.map((student) => {
+const studentScores = students.map(student => {
     const correctCount = student.answers.filter(
     (answer, index) => answer === correctAnswers[index]).length 
 const score = correctCount * 20
@@ -38,7 +38,7 @@ return {...student, score,}
 console.log("STUDENT SCORE")
 console.log(studentScores)
 
-const passedStudent = studentScores.filter((student) => student.score > 70)
+const passedStudent = studentScores.filter(student => student.score > 70)
 console.log("PASSED STUDENT")
 console.log(passedStudent)
 
