@@ -2,6 +2,8 @@
  * An e-commerce platform receives orders from customers.
  */
 
+import { resourceLimits } from "node:worker_threads"
+
 type Order = {
     id: string
     customer: string
@@ -83,7 +85,12 @@ function getShippingCategory(selectedOrder: Order): ShippingCategoryOrder {
 function processOrder<T>(
     arr: Order[],
     callback: (order: Order) => T): T[] {
-    return arr.map(callback)
+    const results : T[] = []
+    arr.forEach(item => {
+        const result = callback(item)
+        results.push(result)
+    })
+    return results
 }
 
 const orderWithPaymentStatus = processOrder(orders, getPaymentStatus)
