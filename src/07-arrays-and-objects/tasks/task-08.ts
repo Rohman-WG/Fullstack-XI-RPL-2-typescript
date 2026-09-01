@@ -1,3 +1,5 @@
+import { availableParallelism } from "node:os";
+
 /**
  * A company evaluates employees based on several projects.
  * Tasks:
@@ -32,3 +34,19 @@ const employees = [
         ],
     },
 ];
+
+const averageScores = employees.map(employe => 
+    {const totalScore = employe.projects.reduce((total, project) => total + project.score,0)
+const averageScore = totalScore / employe.projects.length
+return {name : employe.name, averageScore : averageScore}
+})
+console.log("AVERAGE SCORE")
+console.log(averageScores)
+
+const above85 = averageScores.filter(average => average.averageScore > 85)
+console.log("EMPLOYES AVERAGE SCORE ABOVE 85")
+console.log(above85)
+
+const below80 = averageScores.filter(average => average.averageScore < 80)
+console.log("EMPLOYES AVERAGE SCORE BELOW 80")
+console.log(below80)
