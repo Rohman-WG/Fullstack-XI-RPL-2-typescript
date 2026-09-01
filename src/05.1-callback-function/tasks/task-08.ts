@@ -84,7 +84,12 @@ function processTransactions<T>(
     arr: Transaction[],
     callback: (transaction: Transaction) => T
 ): T[] {
-    return arr.map(callback)
+    const results : T[] = []
+    arr.forEach(item => {
+        const result = callback(item)
+        results.push(result)
+    })
+    return results
 }
 
 const customerNames = processTransactions(transactions, getCustomerName)

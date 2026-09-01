@@ -75,7 +75,12 @@ function employeeProcess<T>(
     arr: Employee[],
     callback: (employee: Employee) => T
 ): T[] {
-    return arr.map(callback);
+    const results : T[] = []
+    arr.forEach(item => {
+        const result = callback(item)
+        results.push(result)
+    })
+    return results
 }
 
 const employeeWithFinalSalary = employeeProcess(employees, calculateFinalSalary)

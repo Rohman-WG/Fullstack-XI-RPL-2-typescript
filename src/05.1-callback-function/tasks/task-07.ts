@@ -109,7 +109,12 @@ function processStudents<T>(
     arr: Student[],
     callback: (student: Student) => T
 ): T[] {
-    return arr.map(callback);
+    const results : T[] = []
+    arr.forEach(item => {
+        const result = callback(item)
+        results.push(result)
+    })
+    return results
 }
 
 const studentsPassFail = processStudents(students, getPassFail);
