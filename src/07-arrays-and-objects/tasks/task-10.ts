@@ -1,3 +1,6 @@
+import { fail } from "node:assert"
+import { compileFunction } from "node:vm"
+
 /**
  * An online exam has students and questions.
  * Tasks:
@@ -40,7 +43,7 @@ const questions = [
         correctAnswer: "D",
         category: "Array",
     },
-];
+]
 
 const submissions = [
     {
@@ -70,5 +73,61 @@ const submissions = [
             { questionId: 4, answer: "B" },
         ],
     },
-];
+]
 
+
+const studentScores = submissions.map(submission => {
+    const correct = submission.answers.filter(answer => {const question = questions.find(
+    (question => question.id === answer.questionId))
+        return question?.correctAnswer === answer.answer
+    }).length
+    return {student: submission.student, score: correct * 25,}})
+console.log("STUDENT SCORE")
+console.log(studentScores)
+
+const studentResult = submissions.map(submission => {
+    const correct = submission.answers.filter(answer => {const question = questions.find(
+        (question => question.id === answer.questionId))
+    return question?.correctAnswer === answer.answer
+    }).length
+    return {student: submission.student, correct: correct, wrong: submission.answers.length - correct}
+})
+console.log("STUDENT RESULTS")
+console.log(studentResult)
+
+const categoryScores: Record<string, number[]> = {}
+questions.forEach((question) => {
+    const scores: number[] = submissions.map((submission) => {
+    const answer = submission.answers.find((answer) => answer.questionId === question.id)
+        return answer?.answer === question.correctAnswer ? 25 : 0})
+    if (!categoryScores[question.category]) {
+        categoryScores[question.category] = []
+    }
+    const totalScore = scores.reduce((sum, score) => sum + score,0)
+    categoryScores[question.category].push(totalScore)})
+const categoryAverage = Object.entries(categoryScores).map(
+    ([category, scores]) => {const totalScore = scores.reduce(
+        (sum, score) => sum + score,0)
+        const averageScore = totalScore / scores.length / submissions.length
+        return {category,averageScore: Number(averageScore.toFixed(2))}
+})
+console.log("AVERAGE SCORES")
+console.log(categoryAverage)
+
+const scores = studentScores.map(student => student.score)
+const totalStudents = submissions.length
+const totalScores = scores.reduce((sum, score) => sum + score,0)
+const averageScores = totalScores / totalStudents
+const highestScore = Math.max(...scores)
+const lowestScore = Math.min(...scores)
+const passedStudent = scores.filter(score => score >= 75).length
+const failedStudents = totalStudents - passedStudent
+const passRate = (passedStudent / totalStudents) * 100
+const finalAnalytics = {
+    totalStudents, averageScores, 
+    highestScore, lowestScore, 
+    passedStudent, failedStudents, 
+    passRate: Number(passRate.toFixed(2))
+}
+console.log("FINAL ANALYTICS")
+console.log(finalAnalytics)

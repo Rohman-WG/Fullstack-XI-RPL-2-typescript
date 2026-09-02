@@ -35,3 +35,18 @@ const posts = [
 ];
 
 
+const findPostTS = posts.filter(post => post.hashtags.includes("TypeScript"))
+console.log("FIND POST TypeScript")
+console.log(findPostTS)
+
+const findPostJS = posts.filter(post => post.hashtags.includes("nestjs"))
+console.log("FIND POST nestjs")
+console.log(findPostJS)
+
+const mostLike = posts.reduce((highest, post) => post.likes > highest.likes ? post : highest)
+console.log("MOST LIKE")
+console.log(mostLike)
+
+const totalLike = posts.reduce((total, post) => total + post.likes,0)
+console.log("TOTAL LIKES")
+console.log(totalLike)
